@@ -20,6 +20,8 @@ libraryDependencies ++= Seq(
   "com.twitter"       %% "chill"                  % "0.5.2"
 )
 
+net.virtualvoid.sbt.graph.Plugin.graphSettings
+
 sonatypeSettings
 
 publishTo <<= version { project_version ⇒
@@ -50,3 +52,4 @@ pomExtra :=
         <id>alltonp</id>
       </developer>
     </developers>
+
