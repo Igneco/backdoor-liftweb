@@ -20,13 +20,6 @@ libraryDependencies ++= Seq(
   "com.twitter"       %% "chill"                  % "0.5.2"
 )
 
-//libraryDependencies := {
-//  CrossVersion.partialVersion(scalaVersion.value) match {
-//    case Some((2, scalaMajor)) if scalaMajor >= 11 => libraryDependencies.value :+ "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
-//    case _ => libraryDependencies.value
-//  }
-//}
-
 sonatypeSettings
 
 publishTo <<= version { project_version ⇒

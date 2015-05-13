@@ -5,7 +5,7 @@ import net.liftweb.http.rest.RestHelper
 import net.liftweb.http.{PlainTextResponse, PostRequest, Req, _}
 import net.liftweb.json._
 
-//TODO: make a backdoor or little-backdoor or liftweb-backdoor or backdoor-liftweb.jar
+//TODO: make 'backdoor' location configurable
 object Backdoor extends RestHelper {
   private val missingHandler: Box[LiftResponse] = BackdoorMessageHandler.fail("Please configure a backdoor handler")
 
