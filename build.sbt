@@ -18,9 +18,6 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "[2.6.1,2.7.0]" % "provided",
   "com.twitter"       %% "chill"                  % "0.5.2"
-
-//	"junit" % "junit" % "4.11" % "test->default",
-//	"org.scalatest" %% "scalatest" % "2.2.0" % "test"
 )
 
 //libraryDependencies := {
