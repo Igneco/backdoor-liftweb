@@ -17,7 +17,8 @@ resolvers ++= Seq(
 
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "[2.6.1,2.7.0]" % "provided",
-  "com.twitter"       %% "chill"                  % "0.5.2"
+  "com.twitter"       %% "chill"                  % "0.5.2",
+  "io.shaka"          %% "naive-http"             % "48" //72
 )
 
 net.virtualvoid.sbt.graph.Plugin.graphSettings

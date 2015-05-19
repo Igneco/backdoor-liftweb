@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: io.shaka:naive-http_2.11:48:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.shaka/naive-http_2.11/jars/naive-http_2.11-48.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.shaka/naive-http_2.11/docs/naive-http_2.11-48-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/io.shaka/naive-http_2.11/srcs/naive-http_2.11-48-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

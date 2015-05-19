@@ -6,7 +6,7 @@ import net.liftweb.http.{PlainTextResponse, PostRequest, Req, _}
 import net.liftweb.json._
 
 //TODO: make 'backdoor' location configurable
-object Backdoor extends RestHelper {
+object BackdoorServer extends RestHelper {
   private val missingHandler: Box[LiftResponse] = BackdoorMessageHandler.fail("Please configure a backdoor handler")
 
   var handler: Option[BackdoorMessageHandler] = None
@@ -36,8 +36,6 @@ object BackdoorMessageHandler {
 trait BackdoorMessageHandler {
   def handle(message: Any): Box[LiftResponse]
 }
-
-
 
 object JsonRequestHandler extends Loggable {
   def handle(req: Req)(process: (JsonAST.JValue, Req) ⇒ Box[LiftResponse]) = {
