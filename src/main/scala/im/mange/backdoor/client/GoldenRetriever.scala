@@ -24,8 +24,8 @@ object GoldenRetriever {
       } }
       f onSuccess { case status => status }
       f onFailure { case e => Left(e) }
-      //TODO: make timeout be configurable
 
+      //TODO: make timeout be configurable
       Await.result(f, Duration(90, SECONDS))
     } catch {
       //      case e: TimeoutException => {
