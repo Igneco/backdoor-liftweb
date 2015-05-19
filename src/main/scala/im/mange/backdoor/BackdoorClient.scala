@@ -1,7 +1,7 @@
 package im.mange.backdoor
 
-import im.mange.backdoor.client.GoldenRetriever
 import im.mange.backdoor.server.kryo.Cryopreservation
+import im.mange.little.LittleClient
 import io.shaka.http.ContentType.APPLICATION_JSON
 import io.shaka.http.Request.POST
 
@@ -11,7 +11,7 @@ object BackdoorClient {
     if (BackdoorConfig.debug) println(s"### Sending:[\n$frozenJson\n]")
     val request = POST(s"$baseUrl/backdoor").contentType(APPLICATION_JSON.value).entity(frozenJson)
 
-    GoldenRetriever.doRunRun(request) match {
+    LittleClient.doRunRun(request) match {
       case Left(e) => throw e
       case Right(r) =>
         val result = r.entityAsString
