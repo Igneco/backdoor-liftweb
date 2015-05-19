@@ -1,13 +1,12 @@
-package im.mange.backdoor.server
+package im.mange.backdoor
 
-import im.mange.backdoor.BackdoorConfig
 import im.mange.backdoor.server.kryo.Cryopreservation
-import net.liftweb.common.{Box, Full, Loggable}
+import im.mange.backdoor.server.{BackdoorMessageHandler, JsonRequestHandler}
+import net.liftweb.common.Box
 import net.liftweb.http.rest.RestHelper
-import net.liftweb.http.{PlainTextResponse, PostRequest, Req, _}
+import net.liftweb.http.{PostRequest, Req, _}
 import net.liftweb.json._
 
-//TODO: make 'backdoor' location configurable
 object BackdoorServer extends RestHelper {
   private val missingHandler: Box[LiftResponse] = BackdoorMessageHandler.fail("Please configure a backdoor handler")
 
@@ -30,8 +29,3 @@ object BackdoorServer extends RestHelper {
     }
   }
 }
-
-
-
-
-

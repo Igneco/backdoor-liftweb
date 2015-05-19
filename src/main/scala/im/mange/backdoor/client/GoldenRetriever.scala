@@ -10,6 +10,7 @@ import scala.concurrent.duration.Duration
 
 //TODO: ultimately use the one in shoreditch instead ...
 // ... so no point in making this nice yet ...
+//TODO: move this into little-client
 object GoldenRetriever {
   import scala.concurrent.ExecutionContext.Implicits.global
 
