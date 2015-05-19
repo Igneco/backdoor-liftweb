@@ -1,5 +1,6 @@
-package im.mange.backdoor
+package im.mange.backdoor.client
 
+import im.mange.backdoor.{BackdoorConfig, Cryopreservation, GoldenRetriever}
 import io.shaka.http.ContentType.APPLICATION_JSON
 import io.shaka.http.Request.POST
 
