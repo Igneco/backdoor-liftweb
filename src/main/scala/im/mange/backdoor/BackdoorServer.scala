@@ -12,7 +12,7 @@ object BackdoorServer extends RestHelper {
   var handler: Option[BackdoorMessageHandler] = None
 
   serve {
-    case Req("hasStarted" :: Nil, "", GetRequest) => BackdoorMessageHandler.ok
+    case Req("backdoor" :: "alive" :: Nil, "", GetRequest) => BackdoorMessageHandler.ok
 
     case req@Req("backdoor" :: Nil, "", PostRequest) => {
       try {
