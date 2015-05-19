@@ -17,7 +17,9 @@ object BackdoorServer extends RestHelper {
     case req@Req("backdoor" :: Nil, "", PostRequest) => {
       try {
         JsonRequestHandler.handle(req)((json, req) ⇒ {
-          val message: Any = Cryopreservation.thaw(pretty(render(json)))
+          val prettyJson = pretty(render(json))
+          if (BackdoorConfig.debug) println(s"### Received:[\n$prettyJson\n]")
+          val message: Any = Cryopreservation.thaw(prettyJson)
           handler.fold(missingHandler)(_.handle(message))
         })
       } catch {

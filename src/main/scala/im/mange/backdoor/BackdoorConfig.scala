@@ -1,5 +1,5 @@
 package im.mange.backdoor
 
-class BackdoorConfig {
-
+object BackdoorConfig {
+  var debug = false
 }
