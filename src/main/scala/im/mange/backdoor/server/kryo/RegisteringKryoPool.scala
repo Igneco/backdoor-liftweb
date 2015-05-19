@@ -1,4 +1,4 @@
-package im.mange.backdoor
+package im.mange.backdoor.server.kryo
 
 import java.io.{ByteArrayOutputStream, IOException, OutputStream}
 

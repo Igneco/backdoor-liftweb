@@ -1,4 +1,4 @@
-package im.mange.backdoor.serialiser
+package im.mange.backdoor.server.kryo.serialiser
 
 import com.esotericsoftware.kryo.io.{Input, Output}
 import com.esotericsoftware.kryo.{Kryo, Serializer}

@@ -1,6 +1,7 @@
 package im.mange.backdoor.server
 
-import im.mange.backdoor.{BackdoorConfig, Cryopreservation}
+import im.mange.backdoor.BackdoorConfig
+import im.mange.backdoor.server.kryo.Cryopreservation
 import net.liftweb.common.{Box, Full, Loggable}
 import net.liftweb.http.rest.RestHelper
 import net.liftweb.http.{PlainTextResponse, PostRequest, Req, _}

@@ -1,7 +1,8 @@
-package im.mange.backdoor
+package im.mange.backdoor.server.kryo
 
 import com.twitter.chill.ScalaKryoInstantiator
-import im.mange.backdoor.serialiser.LocalDateSerializer
+import im.mange.backdoor.BackdoorMessage
+import im.mange.backdoor.server.kryo.serialiser.LocalDateSerializer
 import org.joda.time.LocalDate
 
 object Cryopreservation {

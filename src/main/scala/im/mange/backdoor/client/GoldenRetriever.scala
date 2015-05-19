@@ -1,4 +1,4 @@
-package im.mange.backdoor
+package im.mange.backdoor.client
 
 import java.util.concurrent.TimeUnit._
 
