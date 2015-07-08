@@ -17,19 +17,17 @@ object RememberingPostOffice extends PostOffice with Resettable {
     lettersByAddresse = new scala.collection.concurrent.TrieMap()
   }
 
-  //TODO: validateReceived? or somehting
+  //TODO: validateReceived? or something
   def validate(to: String, expected: Any) = {
     //TODO: obviously we can make this tighter ..
-    val all = lettersByAddresse(to)
+    val all = lettersFor(to)
 //    println(s"all: $all")
     val r = all.contains(expected)
 //    println(s"$expected for $to in ${all.mkString}? $r - ${lettersByAddresse.keys} - ${lettersByAddresse.contains(to)}")
     r
   }
 
-  def debug(): Unit = {
-    println(lettersByAddresse)
-  }
+  def lettersFor(me: String) = lettersByAddresse(me)
 }
 
 trait PostOffice {

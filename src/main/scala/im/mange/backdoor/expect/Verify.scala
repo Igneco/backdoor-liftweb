@@ -2,7 +2,7 @@ package im.mange.backdoor.expect
 
 trait Expectation {
   def isVerified: Boolean
-  //TODO: def describeFailure
+  def describeFailure: String
 }
 
 case class Verify(expectation: Expectation)
