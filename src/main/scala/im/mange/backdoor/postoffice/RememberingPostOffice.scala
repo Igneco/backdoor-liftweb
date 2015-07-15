@@ -1,15 +1,18 @@
 package im.mange.backdoor.postoffice
 
 import im.mange.backdoor.Resettable
+import org.joda.time.DateTime
+
+case class Entry(when: DateTime, what: Any)
 
 object RememberingPostOffice extends PostOffice with Resettable {
-  private var lettersByAddresse: scala.collection.concurrent.TrieMap[String, Seq[Any]] =
+  private var lettersByAddresse: scala.collection.concurrent.TrieMap[String, Seq[Entry]] =
     new scala.collection.concurrent.TrieMap()
 
   override def post(message: Any, to: String): Unit = {
     //TODO: make this a debug flag
-    val current = lettersByAddresse.getOrElse(to, Seq.empty[Any])
-    lettersByAddresse.update(to, current :+ message)
+    val current = lettersByAddresse.getOrElse(to, Seq.empty[Entry])
+    lettersByAddresse.update(to, current :+ Entry(new DateTime(), message))
 //    println(s"$to got $message - now has: ${lettersByAddresse(to).size}")
   }
 
@@ -27,7 +30,7 @@ object RememberingPostOffice extends PostOffice with Resettable {
     r
   }
 
-  def lettersFor(me: String) = lettersByAddresse(me)
+  def lettersFor(me: String) = lettersByAddresse(me).map(_.what)
 
   def state = lettersByAddresse
 }
