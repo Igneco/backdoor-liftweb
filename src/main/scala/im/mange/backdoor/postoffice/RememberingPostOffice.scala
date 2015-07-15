@@ -28,6 +28,8 @@ object RememberingPostOffice extends PostOffice with Resettable {
   }
 
   def lettersFor(me: String) = lettersByAddresse(me)
+
+  def state = lettersByAddresse
 }
 
 trait PostOffice {
