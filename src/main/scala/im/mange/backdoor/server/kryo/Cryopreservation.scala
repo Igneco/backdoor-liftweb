@@ -2,8 +2,8 @@ package im.mange.backdoor.server.kryo
 
 import com.twitter.chill.ScalaKryoInstantiator
 import im.mange.backdoor.BackdoorMessage
-import im.mange.backdoor.server.kryo.serialiser.LocalDateSerializer
-import org.joda.time.LocalDate
+import im.mange.backdoor.server.kryo.serialiser.{DateTimeSerializer, LocalDateSerializer}
+import org.joda.time.{DateTime, LocalDate}
 
 object Cryopreservation {
   import java.util.Base64
@@ -13,7 +13,10 @@ object Cryopreservation {
 
   private val kryo = RegisteringKryoPool.withByteArrayOutputStream(10,
     new ScalaKryoInstantiator(),
-    Seq(ClassAndSerializer(classOf[LocalDate], new LocalDateSerializer()))
+    Seq(
+      ClassAndSerializer(classOf[LocalDate], new LocalDateSerializer()),
+      ClassAndSerializer(classOf[DateTime], new DateTimeSerializer())
+    )
   )
 
   def freeze(thing: Any): String = {
