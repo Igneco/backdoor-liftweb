@@ -1,3 +1,3 @@
 package im.mange.backdoor
 
-case class Debug()
+case class Debug(context: String)
